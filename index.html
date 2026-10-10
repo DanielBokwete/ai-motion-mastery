@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>AI Motion Mastery · Formation motion design avec l'IA</title>
+<meta name="description" content="Formation live : créez du motion design pro avec l'IA. Vendredi 16 octobre 2026, 20h (Kinshasa). 12 USD, 13 places.">
+<meta property="og:title" content="AI Motion Mastery">
+<meta property="og:description" content="Créez du motion design pro avec l'IA. Formation live le 16 octobre, 20h (Kinshasa). 12 USD, 13 places.">
+<meta property="og:image" content="/img/og.png">
+<meta name="theme-color" content="#070b16">
+<link rel="icon" href="/img/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: one narrow column; timeline-editor motifs (timecodes, keyframes) as structure; real work shown as a scrolling reel */
+:root{
+  --bg:#070b16; --surface:#0e1526; --line:#1f2a44; --fg:#eef2fb; --muted:#93a0bd;
+  --accent:#3d7bff; --accent-2:#7fb2ff; --navy:#001956; --ink:#ffffff;
+  --display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;overflow-x:hidden}
+img,video{max-width:100%;display:block}
+.wrap{max-width:760px;margin:0 auto;padding-inline:18px;padding-block:20px 120px;display:flex;flex-direction:column;gap:64px}
+h1,h2{font-family:var(--display);line-height:1.1;text-wrap:balance;margin:0}
+p{margin:0}
+.top{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:.02em}
+.top img{width:36px;height:36px;border-radius:9px}
+.tc{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--accent-2);text-transform:uppercase}
+.hero{display:flex;flex-direction:column;gap:20px}
+.hero h1{font-size:clamp(40px,11vw,76px);font-weight:800;letter-spacing:-.02em}
+.hero h1 span{display:block;color:var(--accent)}
+.lead{font-size:18px;color:var(--muted);max-width:56ch}
+.lead strong{color:var(--fg)}
+.facts{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:13px;padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+.chip b{color:var(--accent-2);font-weight:500}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--accent);color:var(--ink);font-family:var(--display);font-weight:700;font-size:16px;text-decoration:none;padding:17px 26px;border-radius:10px;transition:transform .15s,background .15s}
+.cta:hover{background:#5590ff;transform:translateY(-2px)}
+.cta:focus-visible,.clip:focus-visible{outline:3px solid var(--accent-2);outline-offset:3px}
+.seats{font-size:14px;color:var(--muted)}
+.seats b{color:var(--fg)}
+section{display:flex;flex-direction:column;gap:20px}
+section h2{font-size:clamp(24px,6vw,34px);font-weight:700}
+.ruler{height:22px;border-bottom:1px solid var(--line);background:repeating-linear-gradient(90deg,var(--line) 0 1px,transparent 1px 24px) bottom/100% 8px no-repeat;position:relative}
+.ruler::after{content:"";position:absolute;left:0;bottom:-1px;width:2px;height:22px;background:var(--accent);animation:play 8s linear infinite}
+@keyframes play{to{left:100%}}
+/* reel of real work */
+.reel{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-18px;padding:4px 18px 14px;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.clip{flex:0 0 auto;scroll-snap-align:start;display:flex;flex-direction:column;gap:8px;background:none;border:0;padding:0;color:inherit;text-align:left;cursor:pointer;font:inherit}
+.screen{position:relative;height:min(62vw,300px);aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#0a1020;border:1px solid var(--line)}
+.clip.v .screen{aspect-ratio:9/16}
+.screen video{width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;top:8px;left:8px;font-family:var(--mono);font-size:10px;letter-spacing:.06em;background:rgba(7,11,22,.75);border:1px solid var(--line);padding:3px 7px;border-radius:4px;color:var(--accent-2)}
+.sound{position:absolute;right:8px;bottom:8px;font-family:var(--mono);font-size:11px;background:rgba(7,11,22,.75);border:1px solid var(--line);padding:4px 8px;border-radius:999px}
+.clip[aria-pressed="true"] .screen{border-color:var(--accent)}
+.cap{font-size:14px;color:var(--fg);font-weight:700}
+.hint{font-size:13px;color:var(--muted)}
+/* learn list */
+.learn{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.learn li{display:grid;grid-template-columns:22px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.kf{width:12px;height:12px;background:var(--accent);transform:rotate(45deg);margin-top:7px}
+.learn b{display:block}
+.learn span{color:var(--muted);font-size:15px}
+.who{display:flex;flex-wrap:wrap;gap:8px}
+.who span{padding:8px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:14px}
+.offer{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:20px}
+.price-row{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.price-big{font-family:var(--display);font-size:48px;font-weight:800}
+.price-row span{color:var(--muted)}
+.incl{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.incl li{display:flex;gap:10px}
+.incl li::before{content:"✓";color:var(--accent-2);font-weight:700}
+.info{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:0}
+.info div{background:var(--bg);padding:12px 14px}
+.info dt{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.info dd{margin:2px 0 0;font-weight:700;font-variant-numeric:tabular-nums}
+.bar{position:fixed;left:0;right:0;bottom:0;padding:12px 18px calc(12px + env(safe-area-inset-bottom,0px));background:rgba(7,11,22,.92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:5}
+.bar p{font-size:13px;color:var(--muted);line-height:1.3}
+.bar p b{color:var(--fg);font-size:15px;display:block}
+.bar .cta{padding:12px 18px;font-size:14px;flex-shrink:0}
+footer{font-size:13px;color:var(--muted);text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}
+footer img{width:44px;height:44px;border-radius:10px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="top"><img src="/img/logo.svg" alt="" width="36" height="36">AI MOTION MASTERY</div>
+
+  <header class="hero">
+    <p class="tc">● REC · Formation live · 16.10.2026</p>
+    <h1>AI Motion<span>Mastery</span></h1>
+    <p class="lead">Créez du <strong>motion design pro avec l'IA</strong>, sans être motion designer. Textes qui s'animent, transitions fluides, logos qui prennent vie, pubs produit dynamiques. C'est le <strong>Vibe Motion</strong> : vous décrivez, l'IA anime, vous dirigez le rendu.</p>
+    <div class="facts">
+      <span class="chip">📅 <b>Ven. 16 oct.</b></span>
+      <span class="chip">🕗 <b>20h</b> Kinshasa</span>
+      <span class="chip">⏱ <b>2h</b> en direct</span>
+      <span class="chip">👥 <b>13</b> places</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">
+      <a class="cta js-buy" href="https://daniel-ia-marketer.mychariow.com/aimotionmaster" target="_blank" rel="noopener">Je réserve ma place · 12 USD</a>
+      <p class="seats">Seulement <b>13 places</b>. Quand elles sont prises, c'est terminé.</p>
+    </div>
+  </header>
+
+  <section>
+    <p class="tc">00:00:12 — Réalisations</p>
+    <h2>Ce que j'ai créé avec cette méthode</h2>
+    <p class="lead">Ces vidéos ont été réalisées à 100 % avec l'IA, en appliquant exactement ce que vous allez apprendre.</p>
+    <div class="ruler" aria-hidden="true"></div>
+    <div class="reel" id="reel">
+      <button class="clip" type="button" aria-pressed="false" data-n="9"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-9.jpg" data-src="/videos/realisation-9.mp4"></video><span class="badge">PUB</span><span class="sound">🔇 Son</span></div><span class="cap">Pub fast-food</span></button>
+      <button class="clip" type="button" aria-pressed="false" data-n="4"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-4.jpg" data-src="/videos/realisation-4.mp4"></video><span class="badge">PUB APP</span><span class="sound">🔇 Son</span></div><span class="cap">Service de transport</span></button>
+      <button class="clip" type="button" aria-pressed="false" data-n="7"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-7.jpg" data-src="/videos/realisation-7.mp4"></video><span class="badge">SAAS</span><span class="sound">🔇 Son</span></div><span class="cap">Logiciel CRM WhatsApp</span></button>
+      <button class="clip v" type="button" aria-pressed="false" data-n="6"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-6.jpg" data-src="/videos/realisation-6.mp4"></video><span class="badge">VERTICAL</span><span class="sound">🔇 Son</span></div><span class="cap">Format réseaux sociaux</span></button>
+      <button class="clip" type="button" aria-pressed="false" data-n="1"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-1.jpg" data-src="/videos/realisation-1.mp4"></video><span class="badge">EXPLAINER</span><span class="sound">🔇 Son</span></div><span class="cap">Explainer d'application</span></button>
+      <button class="clip" type="button" aria-pressed="false" data-n="8"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-8.jpg" data-src="/videos/realisation-8.mp4"></video><span class="badge">MARQUE</span><span class="sound">🔇 Son</span></div><span class="cap">Marque alimentaire</span></button>
+      <button class="clip v" type="button" aria-pressed="false" data-n="2"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-2.jpg" data-src="/videos/realisation-2.mp4"></video><span class="badge">TUTO</span><span class="sound">🔇 Son</span></div><span class="cap">Tutoriel app mobile</span></button>
+      <button class="clip" type="button" aria-pressed="false" data-n="3"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-3.jpg" data-src="/videos/realisation-3.mp4"></video><span class="badge">PRODUIT</span><span class="sound">🔇 Son</span></div><span class="cap">Présentation d'app</span></button>
+      <button class="clip" type="button" aria-pressed="false" data-n="5"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-5.jpg" data-src="/videos/realisation-5.mp4"></video><span class="badge">STORY</span><span class="sound">🔇 Son</span></div><span class="cap">Storytelling</span></button>
+      <button class="clip" type="button" aria-pressed="false" data-n="10"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-10.jpg" data-src="/videos/realisation-10.mp4"></video><span class="badge">E-COMMERCE</span><span class="sound">🔇 Son</span></div><span class="cap">Démo boutique en ligne</span></button>
+    </div>
+    <p class="hint">Faites défiler → et touchez une vidéo pour activer le son.</p>
+  </section>
+
+  <section>
+    <p class="tc">00:00:24 — Programme</p>
+    <h2>Ce que vous apprenez en 2h</h2>
+    <ul class="learn">
+      <li><i class="kf"></i><div><b>La méthode Vibe Motion</b><span>Diriger l'IA comme un réalisateur : décrire une scène et obtenir l'animation voulue.</span></div></li>
+      <li><i class="kf"></i><div><b>Le réalisme dans les détails</b><span>Rythme, lumière, mouvements de caméra, typographie : ce qui sépare un rendu amateur d'un rendu pro.</span></div></li>
+      <li><i class="kf"></i><div><b>La cohérence d'une scène à l'autre</b><span>Garder le même style, les mêmes couleurs et la même identité sur toute la vidéo.</span></div></li>
+      <li><i class="kf"></i><div><b>Du prompt à la vidéo finale</b><span>Assembler vos scènes et sortir une vidéo prête à publier.</span></div></li>
+    </ul>
+  </section>
+
+  <section>
+    <p class="tc">00:00:36 — Pour qui</p>
+    <h2>Cette formation est pour vous si vous êtes…</h2>
+    <div class="who"><span>Créateur de contenu</span><span>Entrepreneur</span><span>Community manager</span><span>Graphiste</span><span>Freelance</span></div>
+    <p class="lead">…et que vous voulez des vidéos animées qui arrêtent le scroll, sans logiciel compliqué.</p>
+  </section>
+
+  <section>
+    <p class="tc">00:00:48 — Votre place</p>
+    <div class="offer">
+      <div class="price-row"><span class="price-big">12 USD</span><span>paiement unique</span></div>
+      <ul class="incl">
+        <li>2h de formation en ligne en direct</li>
+        <li>Le replay, à revoir autant de fois que vous voulez</li>
+        <li>Les ressources de la formation</li>
+        <li>L'accès au groupe WhatsApp privé des inscrits</li>
+      </ul>
+      <dl class="info">
+        <div><dt>Date</dt><dd>Ven. 16 octobre 2026</dd></div>
+        <div><dt>Heure</dt><dd>20h (Kinshasa)</dd></div>
+        <div><dt>Durée</dt><dd>2h</dd></div>
+        <div><dt>Places</dt><dd>13 seulement</dd></div>
+      </dl>
+      <a class="cta js-buy" href="https://daniel-ia-marketer.mychariow.com/aimotionmaster" target="_blank" rel="noopener">Réserver ma place maintenant</a>
+    </div>
+  </section>
+
+  <footer><img src="/img/logo.svg" alt="AI Motion Mastery" width="44" height="44">AI Motion Mastery · Daniel/IA-Marketer</footer>
+</main>
+
+<div class="bar">
+  <p><b>12 USD · 13 places</b>Ven. 16 oct. · 20h Kinshasa</p>
+  <a class="cta js-buy" href="https://daniel-ia-marketer.mychariow.com/aimotionmaster" target="_blank" rel="noopener">Réserver</a>
+</div>
+
+<script>
+/* Lien de paiement Chariow : remplacer ici */
+const CHARIOW_URL = "https://daniel-ia-marketer.mychariow.com/aimotionmaster";
+document.querySelectorAll(".js-buy").forEach(a => a.href = CHARIOW_URL);
+
+/* Vidéos : chargées et lues seulement quand elles sont visibles */
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const clips = [...document.querySelectorAll(".clip")];
+const load = v => { if (!v.src) { v.src = v.dataset.src; } };
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      const v = e.target.querySelector("video");
+      if (e.isIntersecting) { load(v); if (!reduce) v.play().catch(() => {}); }
+      else { v.pause(); }
+    });
+  }, { threshold: 0.6 });
+  clips.forEach(c => io.observe(c));
+} else {
+  clips.forEach(c => load(c.querySelector("video")));
+}
+/* Toucher une vidéo : active le son (et coupe les autres) */
+clips.forEach(c => c.addEventListener("click", () => {
+  const v = c.querySelector("video");
+  const on = v.muted;
+  clips.forEach(o => { const ov = o.querySelector("video"); ov.muted = true; o.setAttribute("aria-pressed", "false"); o.querySelector(".sound").textContent = "🔇 Son"; });
+  if (on) {
+    load(v); v.muted = false; v.currentTime = 0; v.play().catch(() => {});
+    c.setAttribute("aria-pressed", "true"); c.querySelector(".sound").textContent = "🔊 Son activé";
+  }
+}));
+</script>
+</body>
+</html>
