@@ -33,6 +33,11 @@ p{margin:0}
 .top{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:.02em}
 .top img{width:36px;height:36px;border-radius:9px}
 .tc{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--accent-2);text-transform:uppercase}
+.promo{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;border:1px solid var(--line);margin-bottom:-28px}
+.promo video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.promo-sound{position:absolute;right:10px;bottom:10px;font:500 12px var(--mono);color:var(--fg);background:rgba(7,11,22,.8);border:1px solid var(--line);padding:7px 12px;border-radius:999px;cursor:pointer}
+.promo-sound[aria-pressed="true"]{border-color:var(--accent);color:var(--accent-2)}
+.promo-sound:focus-visible{outline:3px solid var(--accent-2);outline-offset:2px}
 .hero{display:flex;flex-direction:column;gap:20px}
 .hero h1{font-size:clamp(40px,11vw,76px);font-weight:800;letter-spacing:-.02em}
 .hero h1 span{display:block;color:var(--accent)}
@@ -103,6 +108,11 @@ footer img{width:44px;height:44px;border-radius:10px}
 <body>
 <main class="wrap">
   <div class="top"><img src="/img/logo.svg" alt="" width="36" height="36">AI MOTION MASTERY</div>
+
+  <div class="promo">
+    <video id="promo" autoplay muted loop playsinline preload="auto" poster="/videos/presentation.jpg" src="/videos/presentation.mp4"></video>
+    <button class="promo-sound" id="promoSound" type="button" aria-pressed="false">🔇 Activer le son</button>
+  </div>
 
   <header class="hero">
     <p class="tc">● REC · Formation live · 16.10.2026</p>
@@ -213,6 +223,7 @@ if ("IntersectionObserver" in window) {
 }
 /* Toucher une vidéo : active le son (et coupe les autres) */
 function toggle(c){
+  if (typeof promo !== "undefined" && !promo.muted) { promo.muted = true; pBtn.setAttribute("aria-pressed","false"); pBtn.textContent = "🔇 Activer le son"; }
   const v = c.querySelector("video");
   const on = v.muted;
   clips.forEach(o => { const ov = o.querySelector("video"); ov.muted = true; o.setAttribute("aria-pressed", "false"); o.querySelector(".sound").textContent = "🔇 Son"; });
@@ -224,6 +235,16 @@ function toggle(c){
 clips.forEach(c => {
   c.addEventListener("click", () => toggle(c));
   c.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(c); } });
+});
+
+/* Vidéo de présentation en haut : son au toucher */
+const promo = document.getElementById("promo"), pBtn = document.getElementById("promoSound");
+if (reduce) { promo.removeAttribute("autoplay"); promo.pause(); }
+pBtn.addEventListener("click", () => {
+  const on = promo.muted;
+  if (on) { clips.forEach(o => { o.querySelector("video").muted = true; o.setAttribute("aria-pressed","false"); o.querySelector(".sound").textContent = "🔇 Son"; }); promo.currentTime = 0; }
+  promo.muted = !on; promo.play().catch(() => {});
+  pBtn.setAttribute("aria-pressed", String(on)); pBtn.textContent = on ? "🔊 Son activé" : "🔇 Activer le son";
 });
 </script>
 </body>
