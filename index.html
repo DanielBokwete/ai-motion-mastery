@@ -54,7 +54,9 @@ section h2{font-size:clamp(24px,6vw,34px);font-weight:700}
 /* reel of real work */
 .reel{--h:min(47vw,290px);display:flex;align-items:flex-start;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:18px;margin-inline:-18px;padding:4px 18px 14px;scrollbar-width:thin;scrollbar-color:var(--line) transparent;-webkit-overflow-scrolling:touch}
 .clip{flex:0 0 auto;width:calc(var(--h) * 16 / 9);scroll-snap-align:start;display:flex;flex-direction:column;gap:8px;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.clip.v{width:calc(var(--h) * 9 / 16)}
+.stack{display:flex;flex-direction:column;align-items:center;gap:28px}
+.stack .clip{width:min(100%,360px)}
+.stack .screen{height:auto;aspect-ratio:9/16}
 .screen{position:relative;width:100%;height:var(--h);border-radius:12px;overflow:hidden;background:#000;border:1px solid var(--line)}
 .screen video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
 .badge{position:absolute;top:8px;left:8px;font-family:var(--mono);font-size:10px;letter-spacing:.06em;background:rgba(7,11,22,.75);border:1px solid var(--line);padding:3px 7px;border-radius:4px;color:var(--accent-2);z-index:1}
@@ -116,18 +118,22 @@ footer img{width:44px;height:44px;border-radius:10px}
     <p class="lead">Ces vidéos ont été réalisées à 100 % avec l'IA, en appliquant exactement ce que vous allez apprendre.</p>
     <div class="ruler" aria-hidden="true"></div>
     <div class="reel" id="reel">
-      <div class="clip" role="button" tabindex="0" aria-pressed="false" data-n="9"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-9.jpg" data-src="/videos/realisation-9.mp4"></video><span class="badge">PUB</span><span class="sound">🔇 Son</span></div><span class="cap">Pub fast-food</span></div>
-      <div class="clip" role="button" tabindex="0" aria-pressed="false" data-n="4"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-4.jpg" data-src="/videos/realisation-4.mp4"></video><span class="badge">PUB APP</span><span class="sound">🔇 Son</span></div><span class="cap">Service de transport</span></div>
-      <div class="clip" role="button" tabindex="0" aria-pressed="false" data-n="7"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-7.jpg" data-src="/videos/realisation-7.mp4"></video><span class="badge">SAAS</span><span class="sound">🔇 Son</span></div><span class="cap">Logiciel CRM WhatsApp</span></div>
-      <div class="clip v" role="button" tabindex="0" aria-pressed="false" data-n="6"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-6.jpg" data-src="/videos/realisation-6.mp4"></video><span class="badge">VERTICAL</span><span class="sound">🔇 Son</span></div><span class="cap">Format réseaux sociaux</span></div>
-      <div class="clip" role="button" tabindex="0" aria-pressed="false" data-n="1"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-1.jpg" data-src="/videos/realisation-1.mp4"></video><span class="badge">E-COMMERCE</span><span class="sound">🔇 Son</span></div><span class="cap">Démo boutique en ligne</span></div>
-      <div class="clip" role="button" tabindex="0" aria-pressed="false" data-n="8"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-8.jpg" data-src="/videos/realisation-8.mp4"></video><span class="badge">MARQUE</span><span class="sound">🔇 Son</span></div><span class="cap">Marque alimentaire</span></div>
-      <div class="clip v" role="button" tabindex="0" aria-pressed="false" data-n="2"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-2.jpg" data-src="/videos/realisation-2.mp4"></video><span class="badge">PUB + TUTO</span><span class="sound">🔇 Son</span></div><span class="cap">Pub app mobile money</span></div>
-      <div class="clip" role="button" tabindex="0" aria-pressed="false" data-n="3"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-3.jpg" data-src="/videos/realisation-3.mp4"></video><span class="badge">PRODUIT</span><span class="sound">🔇 Son</span></div><span class="cap">Présentation d'app</span></div>
-      <div class="clip" role="button" tabindex="0" aria-pressed="false" data-n="5"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-5.jpg" data-src="/videos/realisation-5.mp4"></video><span class="badge">STORY</span><span class="sound">🔇 Son</span></div><span class="cap">Storytelling produit</span></div>
-      <div class="clip" role="button" tabindex="0" aria-pressed="false" data-n="10"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-10.jpg" data-src="/videos/realisation-10.mp4"></video><span class="badge">EXPLAINER</span><span class="sound">🔇 Son</span></div><span class="cap">Explainer d'application</span></div>
+      <div class="clip" role="button" tabindex="0" aria-pressed="false" data-n="3"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-3.jpg" data-src="/videos/realisation-3.mp4"></video><span class="badge">PRODUIT</span><span class="sound">🔇 Son</span></div><span class="cap">WhatsApp</span></div>
+      <div class="clip" role="button" tabindex="0" aria-pressed="false" data-n="5"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-5.jpg" data-src="/videos/realisation-5.mp4"></video><span class="badge">FORMATION EXCEL</span><span class="sound">🔇 Son</span></div><span class="cap">Jompik's</span></div>
+      <div class="clip" role="button" tabindex="0" aria-pressed="false" data-n="8"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-8.jpg" data-src="/videos/realisation-8.mp4"></video><span class="badge">MARQUE</span><span class="sound">🔇 Son</span></div><span class="cap">La Fleur Spice</span></div>
+      <div class="clip" role="button" tabindex="0" aria-pressed="false" data-n="7"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-7.jpg" data-src="/videos/realisation-7.mp4"></video><span class="badge">SAAS</span><span class="sound">🔇 Son</span></div><span class="cap">FChat</span></div>
+      <div class="clip" role="button" tabindex="0" aria-pressed="false" data-n="9"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-9.jpg" data-src="/videos/realisation-9.mp4"></video><span class="badge">PUB</span><span class="sound">🔇 Son</span></div><span class="cap">McDonald's</span></div>
+      <div class="clip" role="button" tabindex="0" aria-pressed="false" data-n="10"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-10.jpg" data-src="/videos/realisation-10.mp4"></video><span class="badge">EXPLAINER</span><span class="sound">🔇 Son</span></div><span class="cap">Suno</span></div>
+      <div class="clip" role="button" tabindex="0" aria-pressed="false" data-n="4"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-4.jpg" data-src="/videos/realisation-4.mp4"></video><span class="badge">PUB APP</span><span class="sound">🔇 Son</span></div><span class="cap">Yango</span></div>
+      <div class="clip" role="button" tabindex="0" aria-pressed="false" data-n="1"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-1.jpg" data-src="/videos/realisation-1.mp4"></video><span class="badge">E-COMMERCE</span><span class="sound">🔇 Son</span></div><span class="cap">Teka</span></div>
     </div>
     <p class="hint">Faites défiler → et touchez une vidéo pour activer le son.</p>
+    <p class="tc" style="margin-top:12px">Formats verticaux · 9:16</p>
+    <div class="stack">
+      <div class="clip v" role="button" tabindex="0" aria-pressed="false" data-n="2"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-2.jpg" data-src="/videos/realisation-2.mp4"></video><span class="badge">PUB + TUTO</span><span class="sound">🔇 Son</span></div><span class="cap">Orange Money</span></div>
+      <div class="clip v" role="button" tabindex="0" aria-pressed="false" data-n="6"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/realisation-6.jpg" data-src="/videos/realisation-6.mp4"></video><span class="badge">VERTICAL</span><span class="sound">🔇 Son</span></div><span class="cap">Daniel/IA-Marketer</span></div>
+    </div>
+
   </section>
 
   <section>
