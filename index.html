@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>AI Motion Mastery · Formation motion design avec l'IA</title>
-<meta name="description" content="Formation live : créez du motion design pro avec l'IA. Vendredi 16 octobre 2026, 20h (Kinshasa). 12 USD, 13 places.">
+<meta name="description" content="Formation live : créez du motion design pro avec l'IA. Vendredi 16 octobre 2026, 20h (Kinshasa). 12 USD au lieu de 25 USD, 13 places.">
 <meta property="og:title" content="AI Motion Mastery">
-<meta property="og:description" content="Créez du motion design pro avec l'IA. Formation live le 16 octobre, 20h (Kinshasa). 12 USD, 13 places.">
+<meta property="og:description" content="Créez du motion design pro avec l'IA. Formation live le 16 octobre, 20h (Kinshasa). 12 USD au lieu de 25 USD, 13 places.">
 <meta property="og:image" content="/img/og.png">
 <meta name="theme-color" content="#070b16">
 <link rel="icon" href="/img/logo.svg" type="image/svg+xml">
@@ -76,6 +76,14 @@ section h2{font-size:clamp(24px,6vw,34px);font-weight:700}
 .price-row{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .price-big{font-family:var(--display);font-size:48px;font-weight:800}
 .price-row span{color:var(--muted)}
+.price-row .price-big{color:var(--fg)}
+.price-old{font-family:var(--display);font-size:24px;font-weight:700;color:var(--muted);text-decoration-thickness:3px}
+.price-row .save{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--ink);background:var(--accent);padding:4px 8px;border-radius:999px}
+s.old{opacity:.7;font-weight:500;text-decoration-thickness:2px;margin-right:4px}
+/* bouton qui vibre toutes les 3 s pour attirer l'oeil */
+.js-buy{animation:buzz 3s ease-in-out 1.5s infinite}
+.js-buy:hover,.js-buy:focus-visible{animation-play-state:paused}
+@keyframes buzz{0%,82%,100%{transform:translate(0) rotate(0)}84%{transform:translateX(-3px) rotate(-2deg)}86%{transform:translateX(3px) rotate(2deg)}88%{transform:translateX(-3px) rotate(-1.5deg)}90%{transform:translateX(3px) rotate(1.5deg)}92%{transform:translateX(-2px) rotate(-1deg)}94%{transform:translateX(1px) rotate(0)}}
 .incl{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .incl li{display:flex;gap:10px}
 .incl li::before{content:"✓";color:var(--accent-2);font-weight:700}
@@ -107,7 +115,7 @@ footer img{width:44px;height:44px;border-radius:10px}
       <span class="chip">👥 <b>13</b> places</span>
     </div>
     <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">
-      <a class="cta js-buy" href="https://daniel-ia-marketer.mychariow.com/aimotionmaster" target="_blank" rel="noopener">Je réserve ma place · 12 USD</a>
+      <a class="cta js-buy" href="https://daniel-ia-marketer.mychariow.com/aimotionmaster" target="_blank" rel="noopener">Je réserve ma place · <s class="old">25 USD</s> 12 USD</a>
       <p class="seats">Seulement <b>13 places</b>. Quand elles sont prises, c'est terminé.</p>
     </div>
   </header>
@@ -157,7 +165,7 @@ footer img{width:44px;height:44px;border-radius:10px}
   <section>
     <p class="tc">00:00:48 — Votre place</p>
     <div class="offer">
-      <div class="price-row"><span class="price-big">12 USD</span><span>paiement unique</span></div>
+      <div class="price-row"><s class="price-old">25 USD</s><span class="price-big">12 USD</span><span class="save">−52 %</span><span>paiement unique</span></div>
       <ul class="incl">
         <li>2h de formation en ligne en direct</li>
         <li>Le replay, à revoir autant de fois que vous voulez</li>
@@ -178,7 +186,7 @@ footer img{width:44px;height:44px;border-radius:10px}
 </main>
 
 <div class="bar">
-  <p><b>12 USD · 13 places</b>Ven. 16 oct. · 20h Kinshasa</p>
+  <p><b><s class="old">25 USD</s> 12 USD · 13 places</b>Ven. 16 oct. · 20h Kinshasa</p>
   <a class="cta js-buy" href="https://daniel-ia-marketer.mychariow.com/aimotionmaster" target="_blank" rel="noopener">Réserver</a>
 </div>
 
