@@ -2,8 +2,8 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/", "has": [{ "type": "host", "value": "daniel-ia-marketer.vercel.app" }], "destination": "/formations/index.html" },
-    { "source": "/", "destination": "/ai-motion-mastery/index.html" }
+    { "source": "/", "has": [{ "type": "host", "value": "daniel-ia-marketer.vercel.app" }], "destination": "/formations" },
+    { "source": "/", "destination": "/ai-motion-mastery" }
   ],
   "headers": [
     { "source": "/videos/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
