@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Montage IA 3.0 · Monte tes vidéos avec l'IA</title>
+<meta name="description" content="Tu ajoutes ta vidéo, tu suis les étapes, et l'IA réalise le montage. Formation Montage IA 3.0 avec Claude ou ChatGPT, accès immédiat.">
+<meta property="og:title" content="Montage IA 3.0">
+<meta property="og:description" content="Monte tes vidéos pro avec l'IA, sans être monteur. Claude ou ChatGPT, accès immédiat.">
+<meta property="og:image" content="/videos/montage/m6.jpg">
+<meta name="theme-color" content="#06080d">
+<link rel="icon" href="/img/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+/* Montage IA 3.0 : même système visuel ; héros = deux téléphones avant/après, preuves en grille verticale */
+.phones{display:flex;justify-content:center;align-items:flex-end;gap:clamp(12px,3vw,32px);margin-top:56px;perspective:1400px}
+.phone{width:min(42vw,280px);border-radius:34px;padding:8px;background:linear-gradient(180deg,#1a2130,#0b0f17);border:1px solid var(--line-2);
+  box-shadow:0 30px 90px -30px var(--glow),0 30px 80px -30px rgba(0,0,0,.9);transition:transform .2s linear}
+.phone .screen{height:auto;aspect-ratio:9/16;border-radius:27px;border:0}
+.phone.l{transform:rotateY(14deg) rotateZ(-3deg) translateY(10px)}
+.phone.r{transform:rotateY(-14deg) rotateZ(3deg) translateY(-14px)}
+.phone .cap{text-align:center;padding-top:10px;font-size:15px;color:var(--muted)}
+.vgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:start}
+.vgrid .clip{width:100%}
+.vgrid .screen{height:auto;aspect-ratio:9/16}
+@media(max-width:820px){.vgrid{grid-template-columns:1fr;justify-items:center;gap:32px}.vgrid .clip{width:min(100%,340px)}}
+.files{display:flex;flex-direction:column;gap:12px}
+.file{display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:16px;padding:18px 20px;border-radius:18px;background:var(--glass);border:1px solid var(--line)}
+.file .ico{width:52px;height:52px}
+.file b{display:block;font-size:16px}
+.file span{color:var(--muted);font-size:14px}
+.file em{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--dim)}
+.file.bonus{border-color:rgba(77,141,255,.35);background:rgba(77,141,255,.06)}
+@media(max-width:480px){.file{grid-template-columns:44px 1fr}.file em{display:none}.file .ico{width:44px;height:44px}}
+.duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px;align-items:start}
+@media(max-width:900px){.duo{grid-template-columns:1fr;gap:28px}}
+</style>
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+<div class="ambient" aria-hidden="true"></div>
+
+<nav class="nav" aria-label="Navigation">
+  <div class="nav-in">
+    <a class="brand" href="#top"><img src="/img/logo.svg" alt="" width="32" height="32">Montage IA <span>3.0</span></a>
+    <div class="links"><a href="https://daniel-ia-marketer.vercel.app/">Formations</a><a href="#competences">Compétences</a><a href="#avant-apres">Avant / Après</a><a href="#contenu">Contenu</a><a href="#tarif">Tarif</a><a href="#faq">FAQ</a></div>
+    <a class="btn btn-primary" href="#tarif">J'accède</a>
+  </div>
+</nav>
+
+<main id="top">
+  <header class="wrap hero">
+    <span class="pill rv"><b>Accès immédiat</b>Offre à durée limitée</span>
+    <h1 class="rv d1">Monte tes vidéos pro <span class="hl">avec l'IA</span></h1>
+    <p class="sub rv d2">Tu ajoutes ta vidéo, tu suis les étapes, et l'IA réalise le montage. Avec <b style="color:var(--fg)">Claude ou ChatGPT</b>, et ça marche même avec Claude gratuit.</p>
+    <div class="cta-row rv d3">
+      <a class="btn btn-primary js-buy" href="https://daniel-ia-marketer.mychariow.com/montage-ia" target="_blank" rel="noopener">J'accède à la formation · <s class="old">15,61 $</s> 3,35 $</a>
+      <a class="btn btn-ghost" href="#avant-apres">Voir avant / après</a>
+    </div>
+    <div class="by rv d3"><img src="/img/logo.svg" alt="" width="30" height="30">Par <b>Daniel/IA-Marketer</b><i class="dot"></i>Pas besoin d'être monteur</div>
+
+    <div class="phones">
+      <div class="phone l clip" role="button" tabindex="0" aria-pressed="false"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/montage/m6.jpg" data-src="/videos/montage/m6.mp4"></video><span class="badge">AVANT / APRÈS</span><span class="sound">🔇 Son</span></div></div>
+      <div class="phone r clip" role="button" tabindex="0" aria-pressed="false"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/montage/m3.jpg" data-src="/videos/montage/m3.mp4"></video><span class="badge">RÉSULTAT</span><span class="sound">🔇 Son</span></div></div>
+    </div>
+  </header>
+
+  <section id="competences" class="wrap">
+    <div class="head">
+      <p class="label rv">Ce que tu sauras faire</p>
+      <h2 class="h2 rv d1">De ta vidéo brute à un montage <em>qui retient l'attention</em></h2>
+      <p class="sub rv d2">Pas besoin d'être monteur, ni d'avoir un ordinateur puissant. Une méthode étape par étape, avec des prompts déjà écrits.</p>
+    </div>
+    <div class="grid">
+      <article class="card hot rv"><div class="ico"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM9 9h6M9 13h6M9 17h3"/></svg></div><span class="num">01</span><h3>Monter sans être monteur</h3><p>Tu décris ce que tu veux, l'IA s'occupe du montage. Tu suis simplement les étapes.</p></article>
+      <article class="card rv d1"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 7V5h16v2M12 5v14M9 19h6"/></svg></div><span class="num">02</span><h3>Textes et sous-titres animés</h3><p>Des mots qui apparaissent au rythme de ta voix pour garder l'attention jusqu'au bout.</p></article>
+      <article class="card rv d2"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="10" height="14" rx="2"/><rect x="11" y="3" width="10" height="14" rx="2"/></svg></div><span class="num">03</span><h3>Cartes et incrustations</h3><p>Des éléments qui s'affichent par-dessus ta vidéo pour illustrer ce que tu dis.</p></article>
+      <article class="card rv"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg></div><span class="num">04</span><h3>20 styles de montage prêts</h3><p>Le skill <b>Studio Edits IA</b> et sa vidéo « dictionnaire des styles » pour choisir ton rendu.</p></article>
+      <article class="card rv d1"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div><span class="num">05</span><h3>Au moins 5 formats vidéo</h3><p>Explainer, vidéo éducative, vidéo promotionnelle… avec Claude ou ChatGPT.</p></article>
+      <article class="card rv d2"><div class="ico"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div><span class="num">06</span><h3>Sans ordinateur puissant</h3><p>L'IA fait le travail lourd : pas besoin d'une machine de monteur pro.</p></article>
+    </div>
+  </section>
+
+  <section id="avant-apres" class="wrap">
+    <div class="head">
+      <p class="label rv">Avant / Après</p>
+      <h2 class="h2 rv d1">La même vidéo, <em>montée par l'IA</em></h2>
+      <p class="sub rv d2">À gauche la vidéo brute, à droite le résultat obtenu avec la méthode. Touche une vidéo pour activer le son.</p>
+    </div>
+    <div class="vgrid">
+      <div class="clip v rv" role="button" tabindex="0" aria-pressed="false"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/montage/m6.jpg" data-src="/videos/montage/m6.mp4"></video><span class="badge">AVANT / APRÈS</span><span class="sound">🔇 Son</span></div><span class="cap">Vidéo face caméra</span></div>
+      <div class="clip v rv d1" role="button" tabindex="0" aria-pressed="false"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/montage/m2.jpg" data-src="/videos/montage/m2.mp4"></video><span class="badge">AVANT / APRÈS</span><span class="sound">🔇 Son</span></div><span class="cap">Interview</span></div>
+      <div class="clip v rv d2" role="button" tabindex="0" aria-pressed="false"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/montage/m5.jpg" data-src="/videos/montage/m5.mp4"></video><span class="badge">AVANT / APRÈS</span><span class="sound">🔇 Son</span></div><span class="cap">Podcast</span></div>
+    </div>
+
+    <p class="label sub-label rv">Résultats finaux</p>
+    <div class="vgrid" style="margin-top:20px">
+      <div class="clip v rv" role="button" tabindex="0" aria-pressed="false"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/montage/m1.jpg" data-src="/videos/montage/m1.mp4"></video><span class="badge">STYLE CARTES</span><span class="sound">🔇 Son</span></div><span class="cap">Face caméra</span></div>
+      <div class="clip v rv d1" role="button" tabindex="0" aria-pressed="false"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/montage/m3.jpg" data-src="/videos/montage/m3.mp4"></video><span class="badge">STYLE BLEU</span><span class="sound">🔇 Son</span></div><span class="cap">Interview</span></div>
+      <div class="clip v rv d2" role="button" tabindex="0" aria-pressed="false"><div class="screen"><video muted loop playsinline preload="none" poster="/videos/montage/m4.jpg" data-src="/videos/montage/m4.mp4"></video><span class="badge">CARTES FLOTTANTES</span><span class="sound">🔇 Son</span></div><span class="cap">Podcast</span></div>
+    </div>
+  </section>
+
+  <section id="contenu" class="wrap">
+    <div class="duo">
+      <div class="head" style="margin-bottom:0">
+        <p class="label rv">Le contenu</p>
+        <h2 class="h2 rv d1">Tout ce qu'il te faut, <em>prêt à l'emploi</em></h2>
+        <p class="sub rv d2">Une formation vidéo pas à pas, tes outils et tes prompts déjà écrits. Tu télécharges, tu suis, tu montes.</p>
+        <ul class="stats rv d3">
+          <li><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></span>Téléchargeable, accès immédiat</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M9 12l2 2 4-4"/></svg></span>Claude ou ChatGPT</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>À ton rythme</li>
+        </ul>
+      </div>
+      <div class="files">
+        <div class="file rv"><span class="ico"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><div><b>Formation Montage Vidéo Pro IA</b><span>La méthode complète, étape par étape, en vidéo</span></div><em>VIDÉO</em></div>
+        <div class="file rv d1"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg></span><div><b>Studio Edits IA</b><span>20 styles de montage + la vidéo « dictionnaire des styles »</span></div><em>SKILL</em></div>
+        <div class="file rv d2"><span class="ico"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM9 9h6M9 13h6"/></svg></span><div><b>Mini Prompt</b><span>Le prompt prêt à copier pour lancer ton montage</span></div><em>PROMPT</em></div>
+        <div class="file bonus rv d3"><span class="ico" style="background:var(--accent);border-color:transparent"><svg viewBox="0 0 24 24"><path d="M4 11h16v9H4zM2 7h20v4H2zM12 7v13M12 7c-2-4-6-3-5 0M12 7c2-4 6-3 5 0"/></svg></span><div><b>Bonus : 5 formats vidéo</b><span>Explainer, éducatif, promotionnel… avec Claude ou ChatGPT</span></div><em>OFFERT</em></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="head" style="margin-bottom:0">
+      <p class="label rv">Pour qui</p>
+      <h2 class="h2 rv d1">Cette formation est faite pour toi si tu es…</h2>
+      <div class="who rv d2"><span>Créateur de contenu</span><span>Entrepreneur</span><span>E-commerçant</span><span>Formateur</span><span>Community manager</span></div>
+      <p class="sub rv d3">…et que tu veux publier des vidéos montées comme un pro, sans attendre un monteur à chaque fois.</p>
+    </div>
+  </section>
+
+  <section id="tarif" class="wrap">
+    <div class="price-wrap">
+      <p class="label rv">Tarif</p>
+      <h2 class="h2 rv d1">Un seul paiement, <em>accès immédiat</em></h2>
+    </div>
+    <div class="price rv d2">
+      <div class="price-in">
+        <div class="pl">
+          <span class="ptag">−78 % · Offre à durée limitée</span>
+          <h3>Montage IA 3.0</h3>
+          <p class="meta">Formation téléchargeable · en français · par Daniel/IA-Marketer</p>
+          <div class="amount"><span class="big">3,35</span><span class="cur">$</span><s>15,61 $</s><span class="once">Paiement unique</span></div>
+          <a class="btn btn-primary js-buy" href="https://daniel-ia-marketer.mychariow.com/montage-ia" target="_blank" rel="noopener">J'accède à la formation</a>
+          <div class="secure"><span>🔒 Paiement sécurisé via Chariow</span><span>⚡ Téléchargement juste après le paiement</span></div>
+        </div>
+        <div class="pr">
+          <div class="tiles">
+            <div class="tile"><small>Format</small><b>Téléchargeable</b></div>
+            <div class="tile"><small>Accès</small><b>Immédiat</b></div>
+            <div class="tile"><small>Outils</small><b>Claude ou ChatGPT</b></div>
+            <div class="tile"><small>Niveau</small><b>Débutant</b></div>
+          </div>
+          <p class="incl-label">Ce que tu reçois</p>
+          <ul class="incl">
+            <li><i class="check"></i>Formation Montage Vidéo Pro IA</li>
+            <li><i class="check"></i>Studio Edits IA : 20 styles de montage</li>
+            <li><i class="check"></i>Mini Prompt prêt à l'emploi</li>
+            <li><i class="check"></i>Bonus : 5 formats vidéo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="wrap">
+    <div class="price-wrap">
+      <p class="label rv">FAQ</p>
+      <h2 class="h2 rv d1">Tes questions</h2>
+    </div>
+    <div class="faq">
+      <details class="rv"><summary>Je n'ai jamais fait de montage, c'est pour moi ?</summary><p>Oui. Pas besoin d'être monteur : tu ajoutes ta vidéo, tu suis les étapes, et l'IA réalise le montage.</p></details>
+      <details class="rv"><summary>Faut-il un abonnement payant à Claude ?</summary><p>Non. La méthode fonctionne avec Claude ou ChatGPT, et même avec la version gratuite de Claude.</p></details>
+      <details class="rv"><summary>Mon ordinateur n'est pas puissant, est-ce un problème ?</summary><p>Non. Pas besoin d'un ordinateur puissant pour suivre la méthode.</p></details>
+      <details class="rv"><summary>Comment je reçois la formation ?</summary><p>Juste après le paiement sur Chariow, tu télécharges directement tous les fichiers de la formation.</p></details>
+    </div>
+  </section>
+
+  <section class="wrap final">
+    <h2 class="h2 rv">Prêt à monter tes vidéos <em>avec l'IA</em> ?</h2>
+    <p class="sub rv d1" style="text-align:center">Offre à durée limitée. Accès immédiat après le paiement.</p>
+    <a class="btn btn-primary js-buy rv d2" href="https://daniel-ia-marketer.mychariow.com/montage-ia" target="_blank" rel="noopener">J'accède à la formation · <s class="old">15,61 $</s> 3,35 $</a>
+  </section>
+</main>
+
+<footer><div class="wrap"><a class="brand" href="#top"><img src="/img/logo.svg" alt="" width="32" height="32">Montage IA <span>3.0</span></a><a href="https://daniel-ia-marketer.vercel.app/" style="text-decoration:none">Toutes mes formations →</a><span>© 2026 Daniel/IA-Marketer</span></div></footer>
+
+<div class="mbar" id="mbar">
+  <p><b><s class="old">15,61 $</s> 3,35 $ · Accès immédiat</b>Montage IA 3.0 · Téléchargeable</p>
+  <a class="btn btn-primary js-buy" href="https://daniel-ia-marketer.mychariow.com/montage-ia" target="_blank" rel="noopener">J'accède</a>
+</div>
+
+<script>
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const rvs = document.querySelectorAll(".rv");
+if ("IntersectionObserver" in window && !reduce) {
+  const ro = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); ro.unobserve(e.target); } }), { threshold: .12, rootMargin: "0px 0px -40px 0px" });
+  rvs.forEach(el => ro.observe(el));
+} else rvs.forEach(el => el.classList.add("in"));
+
+document.querySelectorAll(".card").forEach(c => c.addEventListener("pointermove", e => {
+  const r = c.getBoundingClientRect(); c.style.setProperty("--mx", (e.clientX - r.left) + "px"); c.style.setProperty("--my", (e.clientY - r.top) + "px");
+}));
+
+/* Téléphones du haut : se redressent en défilant */
+const phones = document.querySelectorAll(".phone");
+function straighten() {
+  const k = Math.min(1, scrollY / 500);
+  phones.forEach((p, i) => { const s = i ? -1 : 1;
+    p.style.transform = `rotateY(${14 * s * (1 - k)}deg) rotateZ(${-3 * s * (1 - k)}deg) translateY(${(i ? -14 : 10) * (1 - k)}px)`; });
+}
+if (!reduce) { addEventListener("scroll", straighten, { passive: true }); }
+
+const mbar = document.getElementById("mbar"), heroCta = document.querySelector(".cta-row");
+if ("IntersectionObserver" in window) new IntersectionObserver(es => mbar.classList.toggle("show", !es[0].isIntersecting && es[0].boundingClientRect.top < 0)).observe(heroCta);
+else mbar.classList.add("show");
+
+/* Vidéos : chargées et lues seulement quand elles sont visibles ; un toucher active le son */
+const clips = [...document.querySelectorAll(".clip")];
+const load = v => { if (!v.src) v.src = v.dataset.src; };
+function muteAll() { clips.forEach(o => { o.querySelector("video").muted = true; o.setAttribute("aria-pressed", "false"); o.querySelector(".sound").textContent = "🔇 Son"; }); }
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    const v = e.target.querySelector("video");
+    if (e.isIntersecting) { load(v); if (!reduce) v.play().catch(() => {}); } else v.pause();
+  }), { threshold: .5 });
+  clips.forEach(c => io.observe(c));
+} else clips.forEach(c => load(c.querySelector("video")));
+function toggle(c) {
+  const v = c.querySelector("video"), on = v.muted;
+  muteAll();
+  if (on) { load(v); v.muted = false; v.currentTime = 0; v.play().catch(() => {}); c.setAttribute("aria-pressed", "true"); c.querySelector(".sound").textContent = "🔊 Son activé"; }
+}
+clips.forEach(c => {
+  c.addEventListener("click", () => toggle(c));
+  c.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(c); } });
+});
+</script>
+</body>
+</html>
