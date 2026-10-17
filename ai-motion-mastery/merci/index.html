@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>AI Motion Mastery · Accès</title>
+<meta name="description" content="Accès à la formation AI Motion Mastery : groupe WhatsApp et lien Google Meet.">
+<meta name="theme-color" content="#06080d">
+<link rel="icon" href="/img/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/merci.css">
+</head>
+<body>
+<div class="ambient" aria-hidden="true"></div>
+
+<main class="thanks">
+  <a class="brand" href="/ai-motion-mastery"><img src="/img/logo.svg" alt="" width="32" height="32">AI Motion <span>Mastery</span></a>
+  <span class="ok"><i></i>Paiement confirmé · ta place est réservée</span>
+  <h1>Bienvenue dans <span class="hl">AI Motion Mastery</span></h1>
+  <p class="sub">Merci pour ta confiance ! Fais ces 2 étapes maintenant pour ne rien manquer.</p>
+
+  <div class="steps">
+    <section class="step">
+      <h2>Rejoins le groupe WhatsApp des inscrits</h2>
+      <p>Rappels, ressources et infos importantes passent par ce groupe privé.</p>
+      <div class="btns"><a class="btn btn-wa" href="https://chat.whatsapp.com/IRnWMgvki9fLx5QQrZ53Ya?mode=gi_t" target="_blank" rel="noopener">Rejoindre le groupe WhatsApp</a></div>
+    </section>
+
+    <section class="step">
+      <h2>Garde le lien de la session en direct</h2>
+      <p>C'est le lien Google Meet pour participer. Il sera aussi partagé dans le groupe, mais enregistre-le dès maintenant.</p>
+      <p class="linkbox" id="meet">https://meet.google.com/gdv-ixjk-hhu</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="https://meet.google.com/gdv-ixjk-hhu" target="_blank" rel="noopener">Ouvrir Google Meet</a>
+        <button class="btn btn-ghost" id="copy" type="button">Copier le lien</button>
+      </div>
+    </section>
+  </div>
+
+  <div class="facts">
+    <div class="tile"><small>Date</small><b>Ven. 16 oct. 2026</b></div>
+    <div class="tile"><small>Heure</small><b>20h Kinshasa</b></div>
+    <div class="tile"><small>Durée</small><b>2h</b></div>
+  </div>
+
+  <ul class="incl">
+    <li><i class="check"></i>Connecte-toi 5 minutes avant le début.</li>
+    <li><i class="check"></i>Prévois une bonne connexion internet.</li>
+    <li><i class="check"></i>Aie de quoi prendre des notes, et l'envie de créer.</li>
+  </ul>
+
+  <a class="cross" href="/montage-ia">
+    <img src="/videos/montage/m6.jpg" alt="" width="120" height="120">
+    <div><small>Va plus loin</small><b>Montage IA 3.0</b><span>Monte aussi tes vidéos avec l'IA, sans être monteur. Accès immédiat →</span></div>
+  </a>
+
+  <footer>À très vite ! · Daniel/IA-Marketer</footer>
+</main>
+
+<script>
+const btn = document.getElementById("copy"), meet = document.getElementById("meet");
+btn.addEventListener("click", async () => {
+  try { await navigator.clipboard.writeText(meet.textContent.trim()); btn.textContent = "Lien copié ✓"; btn.classList.add("done"); }
+  catch (e) { const r = document.createRange(); r.selectNodeContents(meet); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = "Lien sélectionné, copie-le"; }
+});
+</script>
+</body>
+</html>
